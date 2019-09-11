@@ -35,8 +35,14 @@ void sieve(){
 void factorization(int n){
 	int sqrtn=sqrt(n);
 	for(int i=0;i<prime.size() && prime[i]<=sqrtn;i++){
+
+
 		if(n%prime[i]==0){
 			while(n%prime[i]==0){
+				if(numbers[n]==0){
+					factors.push_back(n);
+					return;
+				}
 				n/=prime[i];
 				factors.push_back(prime[i]);
 			}
